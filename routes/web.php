@@ -21,5 +21,11 @@ Route::get("/{id}/edit","App\Http\Controllers\PostsController@edit");
 Route::put("/{id}/edit","App\Http\Controllers\PostsController@update");
 Route::get("/{delete_contact}/delete","App\Http\Controllers\PostsController@delete");
 
+Route::get("/login","App\Http\Controllers\UserController@Logview");
+Route::get("/register","App\Http\Controllers\UserController@regview");
+Route::post("/register-user","App\Http\Controllers\UserController@Register_User")->name('RegUser');
+Route::post("/login-user","App\Http\Controllers\UserController@Login_User")->name('LogUser');
+
+Route::get('/logout','App\Http\Controllers\UserController@Logout');
 
 

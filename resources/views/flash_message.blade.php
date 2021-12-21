@@ -13,4 +13,14 @@
     M.toast({html: ' {{ $message }} '});
 </script>
 @endif
+@if ($message = Session::get('flesh_register'))
+    <script>
+        M.toast({html: ' {{ $message }} '});
+    </script>
+@endif
+@if ($message = Session::get('Login'))
+    <script>
+        M.toast({html: ' {{ $message }} '});
+    </script>
+@endif
 

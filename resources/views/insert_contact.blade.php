@@ -21,7 +21,7 @@
                                 <label for="last">Last name</label>
                             </div>
                             <div class="input-field col s12">
-                                <input type="text" name="mob_number" id="mob" class="{{ $errors->has("mob_number") ?  "red" : "" }}" value=" {{ old("mob)3.017") }} " >
+                                <input type="text" name="mob_number" id="mob" class="{{ $errors->has("mob_number") ?  "red" : "" }}" value=" {{ old("mob_number") }} " >
                                 <label for="mob"> Mob number </label>
                             </div>
                             <div class="input-field col s12">
