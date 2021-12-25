@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use PharIo\Manifest\Email;
 use Illuminate\Support\Facades\Hash;
 
+
 class UserController extends Controller
 {
     public function logview()
@@ -54,12 +55,21 @@ class UserController extends Controller
                "log_password"=>"required|min:5|max:12",
             ]
         );
-        $log_user = User::where('id','=',$request->id);
+        $data = $request->input();
+
+        $log_user = User::where('email','=',$data['log_email'])->first();
+        // dd($request->input());
+        // dd($log_user);
         if ($log_user) 
         {
-
+        // session()->flash('warning', 'Pogresio si sifru!');
+        if (Hash::check($data['log_password'], $log_user->password)) {
+            $request->session()->put('LoginId',$log_user->id);
+            return redirect('/welcomeUser')->with("Login","Success Login");
+        }else {
+            echo "Greska";
+        }
                    
-        return redirect('/')->with("Login","Success Login");
 
         }
         

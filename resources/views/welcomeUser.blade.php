@@ -1,3 +1,6 @@
+@php
+    use App\Http\Controllers\PostsController;
+@endphp
 @extends('master')
 @section('title')
     Home page
@@ -7,11 +10,11 @@
   <div class="nav-wrapper">
     <a href="/" class="brand-logo">Milan Nikolic</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      {{-- <li><a href="/insert_contact"> Insert contact </a></li> --}}
-      <li><a href="/register"> register </a></li>
-      <li><a href="/login">Login</a></li>
-      {{-- <li><a href="/logout">Logout</a></li> --}}
-      {{-- <button type="submit"> Ime Logovanog korisnmika --}}
+      <li><a href="/insert_contact"> Insert contact </a></li>
+      {{-- <li><a href="/register"> register </a></li> --}}
+      {{-- <li><a href="/login">Login</a></li> --}}
+      <li><a href="/logout">Logout</a></li>
+      <button type="submit"> Ime Logovanog korisnmika
         </button>
   </div>
 </nav>
@@ -46,8 +49,7 @@
                     <td> {{ $post->first_name }} </td>
                     <td> {{ $post->last_name }} </td>
                     <td> {{ $post->mob_number }}</td>
-                    <td> {{ $post->home_number }} 
-                      {{-- <a href="/{{ $post->id }}/delete"><button> Remove </button></a>   <a href="/{{ $post->id }}/edit"><button> Edit </button></a> </td> --}}
+                    <td> {{ $post->home_number }} <a href="/{{ $post->id }}/delete"><button> Remove </button></a>   <a href="/{{ $post->id }}/edit"><button> Edit </button></a> </td>
                   </tr>
                 </tbody>
               </table>

@@ -1,3 +1,7 @@
+@php
+    use Illuminate\Support\Facades\Session;
+
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
-    @include('navbar')
-    
+
+    {{-- @include('navbar') --}}
+   
+     
     @yield('main-content')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     @include('flash_message')

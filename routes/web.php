@@ -26,6 +26,7 @@ Route::get("/register","App\Http\Controllers\UserController@regview");
 Route::post("/register-user","App\Http\Controllers\UserController@Register_User")->name('RegUser');
 Route::post("/login-user","App\Http\Controllers\UserController@Login_User")->name('LogUser');
 
-Route::get('/logout','App\Http\Controllers\UserController@Logout');
+Route::get('/welcomeUser','App\Http\Controllers\PostsController@homeUser');
+Route::get('/logout','App\Http\Controllers\PostsController@logout');
 
 

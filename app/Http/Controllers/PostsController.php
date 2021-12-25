@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Session;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -34,7 +35,7 @@ class PostsController extends Controller
         $post->home_number = request('home_number');
         $post->save();
 
-        return redirect('/')->with('Create','Contact is CREATED');
+        return redirect('welcomeUser')->with('Create','Contact is CREATED');
 
     }
     public function edit($id)
@@ -61,12 +62,26 @@ class PostsController extends Controller
         $post->home_number = request('home_number');
         $post->update();
             
-        return redirect('/')->with('Update','Contact is UPDATED');
+        return redirect('welcomeUser')->with('Update','Contact is UPDATED');
     }
     public function delete($id)
     {
         $post = Post::find($id);
         $post->delete();
-        return redirect("/")->with('Delete','Contact is DELETED');
+        return redirect("welcomeUser")->with('Delete','Contact is DELETED');
+    }
+    public function homeUser()
+    {
+        if (Session::has('LoginId')) {
+            $posts = Post::all();
+            return view('welcomeUser',['posts'=>$posts]);
+        }
+    }
+    public function logout()
+    {
+        if (Session::has('LoginId')) {
+            Session::pull('LoginId');
+            return redirect('/');
+        }
     }
 }

@@ -16,7 +16,7 @@
                 <input type="password" name="log_password" placeholder="insert password" value=" {{ old('log_password') }} ">
                 <span class="text red"> @error('log_password') {{ $message }}  @enderror </span><br><br>
 
-                <button type="Reg_submit">Save</button><br><br>
+                <button type="submit">Save</button><br><br>
 
             </form>
         
