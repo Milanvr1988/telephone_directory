@@ -11,8 +11,6 @@
     <a href="/" class="brand-logo">Milan Nikolic</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="/insert_contact"> Insert contact </a></li>
-      {{-- <li><a href="/register"> register </a></li> --}}
-      {{-- <li><a href="/login">Login</a></li> --}}
       <li><a href="/logout">Logout</a></li>
       <button type="submit"> Ime Logovanog korisnmika
         </button>
@@ -31,8 +29,7 @@
 
 <div class="container">
     <div class="row cyan lighten-5">
-        {{-- <div class="col s12"><p class="center-align">   </p></div> --}}
-        <div class="col s12 m4 l2 cyan lighten-5"><p><a href="insert_phone_number"><button>Add another number</button></a></p></div>
+        <div class="col s12 m4 l2 cyan lighten-5"><p></p></div>
         <div class="col s12 m4 l8"><p>
             <table>
                 <thead>

@@ -3,7 +3,6 @@
     Insert contact
 @endsection
 @section('main-content')
-   
     
     <div class="container">
         <div class="row">

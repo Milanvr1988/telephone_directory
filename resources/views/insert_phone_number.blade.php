@@ -11,14 +11,6 @@
                 <form action="/insert_phone_number" method="POST">
                     @csrf
                     <div class="row">
-                        {{-- <div class="input-field col s12">
-                            <input type="text" name="first_name" id="name" class="{{ $errors->has("first_name") ?  "red" : "" }}" value=" {{ old("first_name") }} ">
-                            <label for="name">First name</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <input type="text" name="last_name" id="last"  class="{{ $errors->has("last_name") ?  "red" : "" }}" value=" {{ old("last_name") }} ">
-                            <label for="last">Last name</label>
-                        </div> --}}
                         <div class="input-field col s12">
                             <input type="text" name="mob_number" id="mob" class="{{ $errors->has("mob_number") ?  "red" : "" }}" value=" {{ old("mob)3.017") }} " >
                             <label for="mob"> Mob number </label>

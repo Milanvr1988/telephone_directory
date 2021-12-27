@@ -19,13 +19,7 @@ class UserController extends Controller
     {
         return view('register');
     }
-    // public function UserLogin( Request $req )
-    // {
-    //     $data = $req->input();
-    //     $req->session()->put('/',$data['/']);
-    //     {{ session('/'); }}
-    // }
-    public function Register_User( Request $request )
+    public function registerUser( Request $request )
     {
         // echo "Registration";
         $request->validate
@@ -44,9 +38,8 @@ class UserController extends Controller
         if ($reg) {
             return redirect("login")->with('flesh_register','Success register');
         }
-
     }
-    public function Login_User( Request $request )
+    public function loginUser( Request $request )
     {
         $request->validate
         (
@@ -62,22 +55,12 @@ class UserController extends Controller
         // dd($log_user);
         if ($log_user) 
         {
-        // session()->flash('warning', 'Pogresio si sifru!');
         if (Hash::check($data['log_password'], $log_user->password)) {
             $request->session()->put('LoginId',$log_user->id);
             return redirect('/welcomeUser')->with("Login","Success Login");
         }else {
-            echo "Greska";
+            echo "Failed";
         }
-                   
-
         }
-        
-        
     }
-        // public function Logout()
-        // {
-        //     return view('/logout');
-        // }
-    
 }
